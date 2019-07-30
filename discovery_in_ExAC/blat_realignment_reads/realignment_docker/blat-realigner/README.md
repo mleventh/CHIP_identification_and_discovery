@@ -1,0 +1,2 @@
+## Installation
+   cd src && make
