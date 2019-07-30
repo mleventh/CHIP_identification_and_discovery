@@ -7,4 +7,4 @@ Presented are CHIP whitelists and scripts that parse them. The lists come from J
 
 # CHIP discovery
 
-In this directory are scripts used for filtering and post-processing of somatic mutation calls in order to identify recurrent somatic mutations. For bleed_through_filter, blat_realignment_reads and phylogic_1d_clustering, these directories contain the dockerfiles for the Terra methods mleventh/bleed_through_context, mleventh/realignment_reads, and mleventh/1d_clustering respectively. 
+In this directory are scripts used for filtering and post-processing of somatic mutation calls in order to identify recurrent somatic mutations. For bleed_through_filter, blat_realignment_reads and phylogic_1d_clustering, these directories contain the dockerfiles for the Terra methods mleventh/bleed_through_context, mleventh/bla-reads-only, and mleventh/phylogic_1d_cluster respectively. 
