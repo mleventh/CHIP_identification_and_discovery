@@ -1,5 +1,3 @@
-# ignore blacklists and mappability tracks
-**/discovery_in_ExAC/Blacklists_and_mappability_tracks/**
-
-# ignore 2bit file
-**/discovery_in_ExAC/Rare_germline_site_filter/SVM_application_and_training/hg19.2bit
+# ignore DS_store
+.DS_Store
+**/.DS_Store
