@@ -1,18 +1,7 @@
-# ************************************************ #
-#     Dockerfile for CGA Production Pipeline       #
-# ************************************************ #
-
 # Set the base image to Ubuntu
 FROM ubuntu:14.04
 
-# File Author / Maintainer
-MAINTAINER lelagina@broadinstitute.org
-
 ENV DEBIAN_FRONTEND noninteractive
-
-# ************************************************ #
-#       Update the repository sources list         #
-# ************************************************ #
 
 RUN apt-get --yes update \
   && apt-get upgrade --yes \     
