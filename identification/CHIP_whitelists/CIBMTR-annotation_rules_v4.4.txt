@@ -1,0 +1,740 @@
+>ANKRD26
+type:5UTR and ExAC_Freq:0.01
+
+>ASXL1
+fs:T and aa_range:400,1540
+type:stopgain and aa_range:400,1540
+#truncating mutations in exon 11-12
+type:splicing and ExAC_Freq:0.01
+
+>ATM
+fs:T
+type:stopgain
+type:splicing
+
+>ATRX
+fs:T
+type:stopgain
+type:splicing
+#missense??
+
+>B2M
+fs:T
+type:stopgain
+type:splicing
+
+>BCOR
+fs:T
+type:stopgain
+type:splicing
+
+>BCORL1
+fs:T
+type:stopgain
+type:splicing
+
+>BRAF
+type:nonsynonymous and aa_range:590,615
+ExAC_Freq:0.01
+
+>BRCA1
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and ExAC_Freq:0.01
+
+>BRCA2
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and ExAC_Freq:0.01
+
+>BRCC3
+fs:T
+type:stopgain
+type:splicing
+
+>BRIP1
+fs:T
+type:stopgain
+type:splicing
+
+>CALR
+fs:T and aa_range:352,418
+#exon 9 frameshift
+
+>CBL
+type:nonsynonymous and aa_range:360,430
+fs:T and aa_range:360,430
+type:nonframeshift and aa_range:360,430
+type:splicing
+
+>CBLB
+type:nonsynonymous and aa_range:360,430
+
+>CEBPA
+fs:T
+type:stopgain
+type:nonsynonymous and ExAC_Freq:0.01
+
+>CREBBP
+fs:T
+type:stopgain
+type:splicing
+
+>CSF1R
+aa_match:Y969
+type:nonsynonymous and aa_range:543,972 and ExAC_Freq:0.01
+fs:T
+type:stopgain
+
+>CSF3R
+aa_match:T615
+aa_match:T618
+#membrane proximal
+fs:T and aa_range:618,840
+type:stopgain and aa_range:618,840
+#C-terminal truncation mutations
+
+>CSNK1A1
+aa_match:E98
+aa_match:D140
+#PMID:25242043
+
+>CTC1
+fs:T
+type:stopgain
+type:splicing
+
+>CTCF
+fs:T
+type:stopgain
+type:splicing
+
+>CUX1
+fs:T
+type:stopgain
+type:splicing
+
+>DDX41
+type:nonsynonymous and ExAC_Freq:0.01
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and aa_range:360,430
+
+>DKC1
+fs:T
+type:stopgain
+type:nonsynonymous and ExAC_Freq:0.01
+#germline
+
+>DNMT3A
+aa_match:R882
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and aa_range:626,910 and ExAC_Freq:0.01
+type:nonsynonymous and aa_range:290,374 and ExAC_Freq:0.01
+
+>ELANE
+type:nonsynonymous and ExAC_Freq:0.01
+#germline
+
+>EP300
+fs:T
+type:stopgain
+type:splicing
+
+>ERCC4
+fs:T
+type:stopgain
+type:splicing
+#germline
+
+>ETNK1
+aa_match:H243
+aa_match:N244
+#kinase domain
+
+>ETV6
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and ExAC_Freq:0.01
+type:nonsynonymous and aa_range:338,424 and ExAC_Freq:0.01
+#ETS domain
+type:nonsynonymous and aa_range:56,123 and ExAC_Freq:0.01
+#PNT domain
+
+>EZH2
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and aa_range:617,738 and ExAC_Freq:0.01
+#SET domain
+type:nonsynonymous and aa_range:500,616 and ExAC_Freq:0.01
+#CXC domain
+
+>FANCA
+fs:T
+type:stopgain
+type:splicing
+#germline
+
+>FANCB
+fs:T
+type:stopgain
+type:splicing
+#germline
+
+>FANCC
+fs:T
+type:stopgain
+type:splicing
+#germline
+
+>FANCD2
+fs:T
+type:stopgain
+type:splicing
+#germline
+
+>FANCE
+fs:T
+type:stopgain
+type:splicing
+#germline
+
+>FANCF
+fs:T
+type:stopgain
+type:splicing
+#germline
+
+>FANCG
+fs:T
+type:stopgain
+type:splicing
+#germline
+
+>FANCI
+fs:T
+type:stopgain
+type:splicing
+#germline
+
+>FANCL
+fs:T
+type:stopgain
+type:splicing
+#germline
+
+>FANCM
+fs:T
+type:stopgain
+type:splicing
+#germline
+
+>FLT3
+aa_match:D835
+aa_match:N841
+aa_match:Y842
+type:nonframeshift and aa_range:800,850 and ExAC_Freq:0.01
+#TKD2
+aa_match:N676
+aa_match:N663
+aa_match:F691
+#TKD1
+aa_match:V592
+aa_match:V579
+#JM domain
+type:nonsynonymous and aa_range:569,700 and ExAC_Freq:0.01
+type:nonframeshift and aa_range:569,700 and ExAC_Freq:0.01
+fs:T and aa_range:569,648
+#JM indel/ITD
+>G6PC3
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and ExAC_Freq:0.01
+#germline
+
+>GATA1
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and ExAC_Freq:0.01
+
+>GATA2
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and aa_range:200,398
+position:128202118,128202197
+#intronic sequence?
+
+>GFI1
+type:nonsynonymous and ExAC_Freq:0.01
+#PMID:12778173
+
+>GNAS
+aa_match:R201
+#NM_000516.4
+
+>GNB1
+aa_match:K57
+aa_match:I80
+aa_match:K89
+#aa_match:D76
+#aa_match:K78
+#aa_match:N88
+
+>HAX1
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and ExAC_Freq:0.01
+#germline
+
+>IDH1
+aa_match:R132
+type:nonframeshift and aa_range:126,138
+
+>IDH2
+aa_match:R172
+aa_match:R140
+type:nonframeshift and aa_range:134,146
+type:nonframeshift and aa_range:164,180
+
+>IKZF1
+fs:T
+type:stopgain
+type:splicing
+
+>JAK2
+aa_match:V617F
+type:nonsynonymous and aa_range:505,547
+#exon 12
+aa_match:V683
+aa_match:R867
+aa_match:D873
+aa_match:P933
+
+>JAK3
+type:nonsynonymous and ExAC_Freq:0.01
+type:nonframeshift and ExAC_Freq:0.01
+
+>KIT
+aa_match:D816
+aa_match:N822
+aa_range:810,830 and ExAC_Freq:0.01
+aa_range:540,600 and ExAC_Freq:0.01
+type:nonframeshift and ExAC_Freq:0.01
+fs:T
+#type:nonsynonymous and ExAC_Freq:0.01
+
+>KRAS
+type:nonsynonymous and ExAC_Freq:0.01
+type:nonframeshift and ExAC_Freq:0.01
+#permissive
+
+>LUC7L2
+fs:T
+type:stopgain
+type:splicing
+
+>MPL
+aa_match:515
+aa_match:505
+type:nonframeshift and aa_range:500,520
+
+>MRE11A
+fs:T
+type:stopgain
+type:splicing
+#germline
+
+>MYD88
+aa_match:L265
+
+>MYH9
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and ExAC_Freq:0.01
+#germline
+
+>NBN
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and ExAC_Freq:0.01
+#germline
+
+>NF1
+fs:T
+type:stopgain
+type:splicing
+
+>NHP2
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and ExAC_Freq:0.01
+#germline
+
+>NOP10
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and ExAC_Freq:0.01
+#germline
+
+>NOTCH1
+type:nonsynonymous and aa_range:1530,1795 and ExAC_Freq:0.01
+type:nonframeshift and aa_range:1530,1795 and ExAC_Freq:0.01
+fs:T and aa_range:2061,2555
+type:stopgain and aa_range:2061,2555
+
+>NOTCH2
+fs:T and aa_range:2010,2471
+type:stopgain and aa_range:2010,2471
+
+>NPM1
+fs:T
+#no AA range needed
+
+>NRAS
+type:nonsynonymous and ExAC_Freq:0.01
+type:nonframeshift and ExAC_Freq:0.01
+#aa_match:G12
+#aa_match:G13
+#aa_match:V14
+#aa_match:I24
+#aa_match:G60
+#aa_match:Q61
+#aa_match:T74P
+#aa_match:A146
+
+>PALB2
+fs:T
+type:stopgain
+type:splicing
+#germline
+
+>PDS5B
+fs:T
+type:stopgain
+type:splicing
+
+>PHF6
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and aa_range:239,330 and ExAC_Freq:0.01
+type:nonsynonymous and aa_range:42,132 and ExAC_Freq:0.01
+
+>PIGA
+type:nonsynonymous and ExAC_Freq:0.01
+fs:T
+type:stopgain
+
+>PIGT
+fs:T
+type:stopgain
+
+>PPM1D
+fs:T and aa_range:421,605
+type:stopgain and aa_range:421,605
+
+>PRPF40B
+fs:T
+type:stopgain
+type:splicing
+
+>PRPF8
+fs:T
+type:stopgain
+type:splicing
+
+>PTEN
+type:nonsynonymous and ExAC_Freq:0.01
+fs:T
+type:stopgain
+
+>PTPN11
+type:nonsynonymous and ExAC_Freq:0.01
+#loose rule
+#add hotspots?
+
+>RAD21
+fs:T
+type:stopgain
+type:splicing
+
+>RAD51C
+fs:T
+type:stopgain
+type:splicing
+
+>RIT1
+aa_match:S35
+aa_match:A57
+aa_match:F82
+aa_match:G95
+aa_match:A77
+aa_match:E81
+aa_match:T83
+aa_match:Y89
+aa_match:M90
+
+>RMRP
+type:nonsynonymous and ExAC_Freq:0.01
+type:nonframeshift and ExAC_Freq:0.01
+fs:T
+type:stopgain
+#germline
+
+>RPL11
+fs:T
+type:stopgain
+#germline
+
+>RPL23
+fs:T
+type:stopgain
+#germline
+
+>RPL26
+fs:T
+type:stopgain
+#germline
+
+>RPL35A
+fs:T
+type:stopgain
+#germline
+
+>RPL36
+fs:T
+type:stopgain
+#germline
+
+>RPL5
+fs:T
+type:stopgain
+#germline
+
+>RPS10
+fs:T
+type:stopgain
+#germline
+
+>RPS15
+fs:T
+type:stopgain
+#germline
+
+>RPS17
+fs:T
+type:stopgain
+#germline
+
+>RPS19
+fs:T
+type:stopgain
+#germline
+
+>RPS24
+fs:T
+type:stopgain
+#germline
+
+>RPS26
+fs:T
+type:stopgain
+#germline
+
+>RPS27A
+fs:T
+type:stopgain
+#germline
+
+>RPS29
+fs:T
+type:stopgain
+#germline
+
+>RPS7
+fs:T
+type:stopgain
+#germline
+
+>RUNX1
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and ExAC_Freq:0.01
+
+>SBDS
+type:nonsynonymous and ExAC_Freq:0.01
+type:nonframeshift and ExAC_Freq:0.01
+type:splicing
+fs:T
+type:stopgain
+#germline
+
+>SETBP1
+type:nonsynonymous and aa_range:855,880
+
+>SETD2
+fs:T
+type:stopgain
+type:splicing
+
+>SF1
+fs:T
+type:stopgain
+type:splicing
+
+>SF3A1
+fs:T
+type:stopgain
+type:splicing
+
+>SF3B1
+type:nonsynonymous and aa_range:550,800 and ExAC_Freq:0.01
+
+>SH2B3
+fs:T
+type:stopgain
+type:nonsynonymous and aa_range:364,441 and ExAC_Freq:0.01
+#SH2 domain
+type:nonsynonymous and aa_range:195,307 and ExAC_Freq:0.01
+#PH domain
+
+>SLX4
+fs:T
+type:stopgain
+type:splicing
+#germline
+
+>SMC1A
+fs:T
+type:stopgain
+type:splicing
+
+>SMC3
+fs:T
+type:stopgain
+type:splicing
+
+>SRSF2
+aa_match:P95
+type:nonframeshift and aa_range:85,100
+fs:T and aa_range:85,100
+
+>STAG1
+fs:T
+type:stopgain
+type:splicing
+
+>STAG2
+fs:T
+type:stopgain
+type:splicing
+
+>STAT3
+aa_range:584,674
+#SH2 domain
+
+>STAT5B
+type:nonsynonymous and aa_range:593,670
+type:nonframeshift and aa_range:593,670
+#SH2 domain
+
+>TERC
+#n/a:must be called separately (non-protein coding)
+
+>TERT
+type:nonsynonymous and ExAC_Freq:0.01
+type:nonframeshift and ExAC_Freq:0.01
+fs:T
+type:stopgain
+#germline
+
+>TET2
+fs:T
+type:splicing
+type:stopgain
+type:nonsynonymous and aa_range:1104,1481 and ExAC_Freq:0.01
+type:nonsynonymous and aa_range:1843,2002 and ExAC_Freq:0.01
+type:nonframeshift and aa_range:1104,1481 and ExAC_Freq:0.01
+type:nonframeshift and aa_range:1843,2002 and ExAC_Freq:0.01
+
+>TINF2
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and aa_range:201,352 and ExAC_Freq:0.01
+#germline
+
+>TP53
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and ExAC_Freq:0.01
+
+>U2AF1
+aa_match:S34
+aa_match:Q157
+
+>U2AF2
+type:nonframeshift and ExAC_Freq:0.01
+fs:T
+type:stopgain
+
+>VPS45
+type:nonsynonymous and ExAC_Freq:0.01
+type:nonframeshift and ExAC_Freq:0.01
+fs:T
+type:stopgain
+#germline
+
+>WAS
+type:nonsynonymous and ExAC_Freq:0.01
+type:nonframeshift and ExAC_Freq:0.01
+fs:T
+type:stopgain
+#germline
+
+>WRAP53
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and ExAC_Freq:0.01
+#germline
+
+>WT1
+fs:T
+type:stopgain
+type:splicing
+
+>XRCC2
+fs:T
+type:stopgain
+type:splicing
+type:nonsynonymous and ExAC_Freq:0.01
+#germline
+
+>ZRSR2
+fs:T
+type:stopgain
+type:splicing
+
+>TERC
+ExAC_Freq:0.01
+
+>MIR142
+ExAC_Freq:0.01

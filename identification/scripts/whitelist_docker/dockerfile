@@ -1,0 +1,16 @@
+FROM r-base
+
+CMD ["/bin/bash"]
+
+RUN apt-get update
+
+COPY packageInstall.R /src/packageInstall.R
+
+RUN Rscript /src/packageInstall.R
+
+RUN echo "r <- getOption('repos'); r['CRAN'] <- 'https://ftp.acc.umu.se/mirror/CRAN/'; options(repos = r);" > ~/.Rprofile && \
+    Rscript -e "install.packages('ggplot2',dependencies=TRUE)" && \
+    Rscript -e "install.packages('data.table',dependencies=TRUE)" 
+
+COPY ../integrated_whitelist_parser.R /usr/integrated_whitelist_parser.R
+COPY ../NEJM2017_whitelist_parser.R /usr/NEJM2017_whitelist_parser.R

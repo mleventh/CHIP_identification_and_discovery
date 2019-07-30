@@ -1,0 +1,26 @@
+FROM ubuntu:17.10
+
+CMD ["/bin/bash"]
+
+RUN apt-get update
+
+RUN apt-get update && apt-get install -y \
+  bzip2 \
+  g++ \
+  make \
+  ncurses-dev \
+  zlib1g-dev \
+  wget \
+  python3.6 \
+  python3-pip \
+  libxft-dev libfreetype6 libfreetype6-dev
+
+RUN pip3 install 'matplotlib == 2.2.3' && pip3 install 'pandas == 0.23.4' && \
+pip3 install 'numpy == 1.15.4' && pip3 install 'scipy == 1.1.0' && pip3 install 'statsmodels == 0.9.0'
+
+RUN apt-get update && apt-get install -y python-dev libpython-dev 
+
+COPY phylogic_preprocess.py /usr/phylogic_preprocess.py
+
+COPY phylogic_preprocess_genome.py /usr/phylogic_preprocess_genome.py
+
