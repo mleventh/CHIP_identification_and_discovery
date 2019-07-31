@@ -74,4 +74,5 @@ sample's false discovery rate is under 0.1, keeping samples that fit this criter
 
 ### Testing
 
-Files test_annotated.txt and test.txt are provided for users to run proximal_afs->SNPKebab->Phylo_merger on their own
+Files test_annotated.txt and test.txt are provided for users to run proximal_afs->SNPKebab->Phylo_merger on their own.
+A sample call stats file cs.txt is also provided for those who want to generate their own, small development set.
