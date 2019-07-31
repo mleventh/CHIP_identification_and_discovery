@@ -14,7 +14,8 @@ is consistent with the observed sample's purity or with the site-specific germli
 The proximal_afs notebook details how mutation annotation files and call stats files were
 annotated with information about the allele fractions of the nearest SNPs and the distribution
 of SNP variant allele fractions at given sites. In addition, the notebook also annotates these
-files for the distance to the nearest SNP and bait boundary. In addition to using this notebook,
+files for the distance to the nearest SNP and bait boundary as well as the GC content of the 
+75 base pair reference contesxt. In addition to using this notebook,
 MappabilityFilter.R uses a GenomicRanges implementation to identify sites that overlap with
 common germline CNVs, segmental duplications, and the UCSC mappability tracks. In addition,
 this script can be used to filter out sites that fail Hardy-Weinberg Equilibrium and sites
