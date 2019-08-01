@@ -24,6 +24,8 @@ RUN apt-get update && apt-get install -y autoconf automake bison build-essential
 
 COPY legoPlotter3.py /usr/legoPlotter3.py
 
+COPY bleedFilterFC.py /usr/bleedFilterFC.py
+
 COPY bleed_diff.py /usr/bleed_diff.py
 
 COPY bleed_through_modified.py /usr/bleed_through_modified.py
