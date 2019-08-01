@@ -114,10 +114,10 @@ if (TRUE) {
 	sort.genes.by.prevalence <- FALSE
 	reference.genome <- "/seq/references/Homo_sapiens_assembly19/v1/Homo_sapiens_assembly19.fasta"
 	png.output <- FALSE
-	analysis.set <- "all_clone_sig_genes_5mut"
-	significance.file <- "all_clone/all_clone_mut_lim/sig_genes_5mut_RNA.txt"
-	maf.file <- "all_clone/all_clone_mut_lim/5mut_final.maf"
-	coverage.file <- "all_clone/all_clone_mut_lim/5mut_patient_counts_and_rates_sig.txt"
+	analysis.set <- "coMut"
+	significance.file <- "sig_genes.txt"
+	maf.file <- "final_analysis_set.maf"
+	coverage.file <- "patient_counts_and_rates.txt"
 	blacklist.file <- ""
 	whitelist.file <- ""
 	firehose.mutsig.mutcategs <- ""
@@ -426,8 +426,7 @@ if (allelic.fraction.boxplot) {
 	}
 }
 
-#mutperc <- rev(sig_genes$npat)/nrow(patients.counts_and_rates)*100
-mutperc <- rev(sig_genes$npat)/length(unique(final_analysis_set$Tumor_Sample_Barcode))*100
+mutperc <- rev(sig_genes$npat)/nrow(patients.counts_and_rates)*100
 
 # remove silent
 #genematrix[which(genematrix==1, arr.ind=TRUE)] <- 0
