@@ -28,14 +28,18 @@ def main():
     output_filename=sys.argv[3]
 
     maf=pd.read_csv(input_file,sep='\t')
+    
+    #instantiate allele fraction bins for phylogic's default bin space
     afb=np.arange(0,1.01,0.01)
 
+    #IF MAF DOES NOT HAVE OXOG FILTERED, USE THESE LINES--found in base docker image
     # pox=pd.to_numeric(maf.pox)>pd.to_numeric(maf.pox_cutoff)
     # GT=maf.Reference_Allele.str.match("G")&maf.Tumor_Seq_Allele2.str.match("T")
     # CA=maf.Reference_Allele.str.match("C")&maf.Tumor_Seq_Allele2.str.match("A")
 
     # maf=maf[~((GT&pox)|(CA&pox))]
 
+    #eliminate orientation bias artifacts in all mutation types
     maf.dropna(subset=["i_t_ALT_F1R2","i_t_ALT_F2R1"],inplace=True)
 
     maf['orientation_bias_F1']=stats.binom.cdf(pd.to_numeric(maf.i_t_ALT_F1R2),
@@ -48,6 +52,7 @@ def main():
 
     maf=maf.loc[(maf.orientation_bias_F1<0.99)&(maf.orientation_bias_F2<0.99),:]
 
+    #Filter for the read-based blat minimum and lod minimum as specified in the default docker image
     # maf=maf[pd.to_numeric(maf.t_lod_fstar)>8.6]
     # print(len(maf.index))
     maf=maf.reset_index(drop=True)
@@ -55,11 +60,13 @@ def main():
     #maf=maf[pd.to_numeric(maf.keep_max)>60]
     #maf=maf.reset_index(drop=True)
 
+    #remove ExAC SNPs with population allele frequency>1%
     maf=remove_exac_sites_from_maf(maf,exac_file)
     maf=maf.reset_index(drop=True)
 
     beta_vals=[]
 
+    #calculate beta distribution bin values for all SNVs
     for idx,row in maf.iterrows():
         distribution=stats.beta.pdf(afb,row.t_alt_count+1,row.t_ref_count+1)
         beta_vals.append(distribution)
@@ -70,6 +77,7 @@ def main():
               "Variant_Classification", "Reference_Allele","Tumor_Seq_Allele2",
               "Protein_Change","Tumor_Sample_Barcode")]
 
+    #append beta distribution bins to MAF
     formatted_maf=pd.concat([maf,beta_df],axis=1)
 
     formatted_maf.to_csv(output_filename,sep='\t',index=False)
