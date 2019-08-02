@@ -72,7 +72,6 @@ we test if, given the median depth of the mutations in the sample, the sample's 
 skew and the sample's purity the sample's true positive rate is above 0.9 and the 
 sample's false discovery rate is under 0.1, keeping samples that fit this criteria
 
-### Testing
+## Data preparation workflow
 
-Files test_annotated.txt and test.txt are provided for users to run proximal_afs->SNPKebab->Phylo_merger on their own.
-A sample call stats file cs.txt is also provided for those who want to generate their own, small development set.
+The notebooks are meant to run in the order proximal_afs -> SNPKebab -> phylo_merger
