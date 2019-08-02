@@ -1,15 +1,31 @@
-source("https://bioconductor.org/biocLite.R")
-#biocLite("GenomicRanges")
 library(GenomicRanges)
 library(data.table)
 
-downsize<-fread("genovese_blacklists/phylogic_clustered_exacMuts_1kg_segdup_CNV_CHIP.txt",sep='\t',header=TRUE,stringsAsFactors=F)
-downsize2<-downsize[is.na(downsize$Start_position)==FALSE,]
-wig.iter<-fread("~/Documents/ExAC_filtering/germline_CNVs/kg_common_germline_CNVs.txt",header=T,stringsAsFactors=F)
+library(optparse)
+
+options(stringsAsFactors=FALSE)
+
+option.list <- list(
+  make_option(c("-m","--maf"), action="store", default="maf.maf",type="character",help="specify maf here"),
+  make_option(c("-s","--samplenames"),action="store",default="CHIP_",type="character",help="sample name"),
+  make_option(c("-w","--annotation"),action="store",default="age_annotation.txt",type="character",help="Annotations associated with genomic intervals"),
+)
+
+opt  <- parse_args(OptionParser(option_list=option.list, usage = "Rscript %prog [options]"), print_help_and_exit=FALSE)
+
+maf<-opt$maf
+annotation<-opt$annotation
+samplenames<-opt$samplenames
+
+#Note: the segdup file from UCSC does not come with a header, so set header=FALSE for that file
+downsize2<-fread(maf,sep='\t',header=TRUE,stringsAsFactors=F)
+wig.iter<-fread(annotation,header=T,stringsAsFactors=F)
+
+#set headers for segdup file and get rid of chr contigs
 colnames(wig.iter)[2:4]<-c("Chromosome","Start_position","End_position")
 wig.iter$Chromosome<-gsub("chr","",wig.iter$Chromosome)
 
-##CNV##
+##CNV annotations##
 
 wig.iter<-wig.iter[,c(1:9,2514,2515)]
 colnames(wig.iter)[1]<-"Chromosome"
@@ -18,13 +34,6 @@ wig.iter<-wig.iter[is.na(wig.iter$Start_position)==FALSE,]
 wig.iter<-wig.iter[is.na(wig.iter$End_position)==FALSE,]
 
 ####
-
-##for refseq and ucsc references##
-wig.iter$Chromosome_refseq<-gsub("X","23",wig.iter$Chromosome_refseq)
-wig.iter$Chromosome_refseq<-gsub("Y","24",wig.iter$Chromosome_refseq)
-wig.iter<-wig.iter[is.na(wig.iter$Chromosome_refseq)==FALSE,]
-
-#agilent<-fread("gaf_20111020_broad_wex_1.1_hg19.bed.interval_list",sep='\t',header=TRUE,stringsAsFactors=F)
 
 downsize.range<-with(downsize2, GRanges(Chromosome, IRanges(start=Start_position,end=End_position)))
 wig.range<-with(wig.iter, GRanges(Chromosome, IRanges(start=Start_position,end=End_position)))
@@ -45,14 +54,10 @@ downsize.score$end<-end
 #ensure vectors are of the same type
 wig.iter$Start_position<-as.character(wig.iter$Start_position)
 
-#setkey(downsize2,Start_position)
-#setkey(wig.iter,Start_position)
-#scores<-downsize2[wig.iter]
 scores<-merge(downsize.score,wig.iter,by.x="start",
               by.y="Start_position",all.x=TRUE)
 
 scores.blacklisted<-scores[is.na(scores$POS),c(2:21)]
-colnames(scores.blacklisted)<-gsub("\\.x","",colnames(scores.blacklisted))
 
 write.table(scores.blacklisted[,c(2:25,29)],"all_clone/blacklist/exac_cluster_allClone_hwe_segdup_CNV_map.maf",sep='\t',quote=F,
             row.names=F)
@@ -114,6 +119,10 @@ ggsave("whitelist_all_genes_old_filter_fixed_depth_purity_filter_3_22_beta=2.png
 scores$hwe_fail<-0
 scores$hwe_fail[is.na(scores$End_position.y)==FALSE]<-1
 scores.blacklisted<-scores[scores$hwe_fail==0,2:25]
+colnames(scores.blacklisted)<-gsub("\\.x","",colnames(scores.blacklisted))
+write.table(scores.blacklisted,
+            paste0(samplenames,"_blacklisted.txt",sep="")
+            sep='\t',quote=F,row.names=F)
   
 ###segdup###
 
@@ -121,7 +130,10 @@ scores<-scores[!duplicated(scores[,2:25])]
 scores$has_segdup<-0
 scores$has_segdup[is.na(scores$End_position.y)==FALSE]<-1
 scores.blacklisted<-scores[scores$has_segdup==0,c(2:25)]
-
+colnames(scores.blacklisted)<-gsub("\\.x","",colnames(scores.blacklisted))
+write.table(scores.blacklisted,
+            paste0(samplenames,"_blacklisted.txt",sep="")
+            sep='\t',quote=F,row.names=F)
 
 ### dealing with CN overlaps ###
 
@@ -132,8 +144,9 @@ scores$gain_overlap[grep("CN3",scores$ALT)]<-1
 scores$loss_overlap[grep("CN0",scores$ALT)]<-1
 
 scores.blacklisted<-scores[scores$gain_overlap==0&scores$loss_overlap==0,c(2:25)]
+colnames(scores.blacklisted)<-gsub("\\.x","",colnames(scores.blacklisted))
 write.table(scores.blacklisted,
-            "all_clone/blacklist/exac_cluster_allClone_hwe_segdup_CNV.maf",
+            paste0(samplenames,"_blacklisted.txt",sep="")
             sep='\t',quote=F,row.names=F)
 
 
@@ -143,4 +156,8 @@ scores<-scores[!duplicated(scores[,2:25])]
 scores$mask<-0
 scores$mask[is.na(scores$End_position.y)==TRUE]<-1
 scores.blacklisted<-scores[scores$mask==0,c(2:25)]
+colnames(scores.blacklisted)<-gsub("\\.x","",colnames(scores.blacklisted))
+write.table(scores.blacklisted,
+            paste0(samplenames,"_blacklisted.txt",sep="")
+            sep='\t',quote=F,row.names=F)
 
