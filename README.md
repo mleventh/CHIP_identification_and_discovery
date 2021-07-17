@@ -1,5 +1,5 @@
 # CHIP identification and discovery
-Scripts to identify CHIP mutations in mutation annotation files and for identifying somatic mutations in normal blood samples for the identification of recurrently mutated genes in blood
+Scripts to identify CHIP mutations in mutation annotation files and for identifying somatic mutations in normal blood samples for the identification of recurrently mutated genes in blood, used for the data analysis in Beauchamp et al. 2021: https://bloodcancerdiscov.aacrjournals.org/content/early/2021/07/13/2643-3230.BCD-20-0224
 
 # CHIP identification
 
